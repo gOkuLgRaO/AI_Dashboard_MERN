@@ -5,7 +5,7 @@ import { loadType } from "mongoose-currency";
 const Schema = mongoose.Schema;
 loadType(mongoose);
 
-const daySchema = new Schema(
+const daySchema = new Schema( // this is a day schema, structure for storage of daily data
   {
     date: String,
     revenue: {
@@ -22,7 +22,7 @@ const daySchema = new Schema(
   { toJSON: { getters: true } }
 );
 
-const monthSchema = new Schema(
+const monthSchema = new Schema( // this is a month schema, structure of monthly data storage
   {
     month: String,
     revenue: {
@@ -46,27 +46,27 @@ const monthSchema = new Schema(
       get: (v) => v / 100,
     },
   },
-  { toJSON: { getters: true } }
+  { toJSON: { getters: true } } // to use the 'get' property
 );
 
 const KPISchema = new Schema( // schema for KPIs
   {
-    totalProfit: {
+    totalProfit: { // for total profit
+      type: mongoose.Types.Currency,
+      currency: "USD",
+      get: (v) => v / 100, //grabbing the value
+    },
+    totalRevenue: { // for total revenue
       type: mongoose.Types.Currency,
       currency: "USD",
       get: (v) => v / 100,
     },
-    totalRevenue: {
+    totalExpenses: { // for total expenses
       type: mongoose.Types.Currency,
       currency: "USD",
       get: (v) => v / 100,
     },
-    totalExpenses: {
-      type: mongoose.Types.Currency,
-      currency: "USD",
-      get: (v) => v / 100,
-    },
-    expensesByCategory: {
+    expensesByCategory: { // for expenses by category
       type: Map,
       of: {
         type: mongoose.Types.Currency,

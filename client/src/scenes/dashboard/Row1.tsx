@@ -17,7 +17,7 @@ import {
   Line,
   Tooltip,
   Area,
-} from "recharts";
+} from "recharts"; // importing for charts to show
 
 const Row1 = () => {
   const { palette } = useTheme();

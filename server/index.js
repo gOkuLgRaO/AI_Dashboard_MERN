@@ -11,7 +11,7 @@ import transactionRoutes from "./routes/transaction.js";
 import KPI from "./models/KPI.js";
 import Product from "./models/Product.js";
 import Transaction from "./models/Transaction.js";
-import { kpis, products, transactions } from "./data/data.js";
+import { kpis, products, transactions } from "./data/data.js"; // importing the data
 
 /* CONFIGURATIONS */
 dotenv.config();

@@ -6,7 +6,7 @@ import {
   GetKpisResponse,
   GetProductsResponse,
   GetTransactionsResponse,
-} from "./types";
+} from "./types"; // we are importing objects from types.js
 
 export const api = createApi({       // we can grab data from backend
   baseQuery: fetchBaseQuery({ baseUrl: import.meta.env.VITE_BASE_URL }),      // environment variable like port no. from .env file

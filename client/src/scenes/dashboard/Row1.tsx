@@ -26,7 +26,7 @@ const Row1 = () => {
   const revenue = useMemo(() => {
     return (
       data &&
-      data[0].monthlyData.map(({ month, revenue }) => {
+      data[0].monthlyData.map(({ month, revenue }) => { // see types.ts for structure of object
         return {
           name: month.substring(0, 3),
           revenue: revenue,
@@ -70,7 +70,7 @@ const Row1 = () => {
           sideText="+4%"
         />
         <ResponsiveContainer width="100%" height="100%">
-          <AreaChart
+          <AreaChart // for the area chart
             width={500}
             height={400}
             data={revenueExpenses}
@@ -82,7 +82,7 @@ const Row1 = () => {
             }}
           >
             <defs>
-              <linearGradient id="colorRevenue" x1="0" y1="0" x2="0" y2="1">
+              <linearGradient id="colorRevenue" x1="0" y1="0" x2="0" y2="1"> {/* setting the linear gradient in the graph for revenue part of the chart */}
                 <stop
                   offset="5%"
                   stopColor={palette.primary[300]}
@@ -94,7 +94,7 @@ const Row1 = () => {
                   stopOpacity={0}
                 />
               </linearGradient>
-              <linearGradient id="colorExpenses" x1="0" y1="0" x2="0" y2="1">
+              <linearGradient id="colorExpenses" x1="0" y1="0" x2="0" y2="1"> {/* setting up  the linear gradient for expenses part of the chart */}
                 <stop
                   offset="5%"
                   stopColor={palette.primary[300]}

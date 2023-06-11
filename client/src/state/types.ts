@@ -1,5 +1,6 @@
-export interface ExpensesByCategory {
-  salaries: number;
+// here, we are creating objects and the attributes within the object for each graph in the dashboard
+export interface ExpensesByCategory { // object
+  salaries: number; // attribute of that object
   supplies: number;
   services: number;
 }
